@@ -1,6 +1,10 @@
 ### MESSAGER  
 #### Chat App with React and Node.js  
 
+
+![App Page](/react-chat-app/public/messaging.jpg)
+
+
 **Scripts**  
 Installation:
 ```bash
