@@ -21,10 +21,6 @@ io.on("connection", (socket) => {
     if (error) return callBack(error);
 
     socket.join(user.room);
-    socket.emit("message", {
-      user: "Admin",
-      text: `Welocome to ${user.room}`,
-    });
 
     socket.broadcast
       .to(user.room)

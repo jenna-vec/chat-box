@@ -22,16 +22,13 @@ const Chat = ({ location }) => {
       if (error) {
         alert(error);
       }
-    });
-  }, [location.search]);
+      });
+    }, [location.search]);
+
   useEffect(() => {
     socket.on("message", (message) => {
       setMessages((messages) => [...messages, message]);
     });
-    // socket.on("roomData", ({ users }) => {
-    //   console.log(users);
-    //   setUsers(users);
-    // });
   }, []);
 
   const handleSubmit = (e) => {
@@ -43,24 +40,34 @@ const Chat = ({ location }) => {
   };
 
   return (
-    <div>
-      {messages.map((val, i) => {
-        return (
-          <div key={i}>
-            {val.text}
-            <br />
-            <b>{val.user}</b>
+    <div className="home">
+      <div className="chat-card">
+        <h4>{room}</h4>
+        <br />
+        <div className="card-flex">
+          <div className="chat-box">
+            {messages.map((val, i) => {
+              return (
+                <div className="text-right" key={i}>
+                  <p className="bubble">{val.text}</p>
+                  <small>{val.user}</small>
+                </div>
+              );
+            })}
           </div>
-        );
-      })}
-      <form action="" onSubmit={handleSubmit}>
-        <input
-          type="text"
-          value={message}
-          onChange={(e) => setMessage(e.target.value)}
-        />
-        <input type="submit" />
-      </form>
+          <div className="submit-box">
+            <form className="wrapper" action="" onSubmit={handleSubmit}>
+              <input
+                className="chat-input"
+                type="text"
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+              />
+              <input className="submit" type="submit" value="&#8811;" />
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

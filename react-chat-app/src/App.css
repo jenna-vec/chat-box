@@ -1,0 +1,224 @@
+/* Basic Body Styling */
+* {
+    font-family: "Roboto","Arial",sans-serif;
+}
+
+a, p, input, h1, h2, h3, h4, h5, button, small {
+    font-family: "Roboto","Arial",sans-serif;
+    text-decoration: none;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    color: #8d876d;
+}
+
+small {
+    padding: 1em 1em 0 0;
+}
+
+h4 {
+    text-align: center;
+}
+
+.text-right {
+    text-align: end;
+    margin-right: 1em;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background-color: #fdfdfd;
+}
+
+button {
+    border: 1pt solid #8d876d;
+    font-weight: 600;
+    border-radius: 11px;
+    background-color: #fdfdfd;
+    padding: 0.4em 1em;
+    box-shadow: rgb(157 137 8 / 87%) 1px 2px 3px;
+    cursor: pointer;
+}
+
+.button:active {
+    box-shadow: rgb(253 253 253) 0px 3px 5px;
+}
+
+input {
+    width: 10em;
+    border: 1pt solid #8d876d;
+    height: 29pt;
+    padding-left: 1em;
+    border-radius: 11px;
+    background-color: #fdfdfd;
+}
+  
+input::placeholder {
+    color: #8d876d;
+}
+  
+input:focus, textarea:focus {
+    outline: none;
+    box-shadow: rgb(157 137 8 / 87%) 1px 2px 3px;
+}
+
+
+
+/* Custom Scrollbar for the chat box*/
+.chat-box::-webkit-scrollbar {
+    width: 12px;
+}
+.chat-box::-webkit-scrollbar-track {
+    background: none;
+}
+.chat-box::-webkit-scrollbar-thumb {
+    background: transparent;
+    border-radius: 20px;
+    border: 1pt solid cornsilk;
+}
+
+.chat-box::-webkit-scrollbar-corner {
+    background-color: #e6e3d3;
+}
+
+
+
+/* Main Divs */
+.home {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+}
+
+.card {
+    padding: 15vh 25vw;
+    background-color: #e6e3d3;
+    border: 1pt solid #8d876d3b;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 18px;
+    grid-gap: 1.5em;
+    box-shadow: rgb(151 125 10 / 25%) 0px 13px 27px -5px, rgb(122 103 20 / 30%) 0px 8px 16px -8px;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 0.4em;
+    align-items: center;
+}
+
+.logo {
+    width: 5em;
+}
+
+
+
+
+/* Chatbox Page */
+.chat-card {
+    height: 62vh;
+    width: 62vw;
+    padding: 4em;
+    background-color: #e6e3d3;
+    border: 1pt solid #8d876d3b;
+    border-radius: 18px;
+    box-shadow: rgb(151 125 10 / 25%) 0px 13px 27px -5px, rgb(122 103 20 / 30%) 0px 8px 16px -8px;
+}
+
+.card-flex{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    grid-gap: 2em;
+}
+
+.chat-box {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 2em;
+    width: 100%;
+    overflow: scroll;
+    /* Keep chatbox scrolled to the most-recent message !!! */
+    overflow-y: scroll;
+    overscroll-behavior-y: contain;
+    scroll-snap-type: y proximity;
+    align-items: flex-end;
+}
+
+/* Keep chatbox scrolled to the most-recent message !!! */
+.chat-box > div:last-child {
+    scroll-snap-align: end;
+}
+
+.bubble {
+    background-color: cornsilk;
+    padding: 0.3em 1em;
+    border-radius: 20px;
+    width: fit-content;
+    margin-bottom: 3px;
+}
+
+.submit-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.wrapper {
+    margin-right: 3em;
+}
+
+/* Arrow within the input */
+.wrapper:before, .wrapper:after{
+    content:"";
+    display:table;
+}
+
+.wrapper:after{
+    clear:both;
+}
+
+.chat-input {
+    width: 100%;
+}
+
+.chat-input:focus {
+    outline: 0;
+}
+
+/* Keep text from running into the submit arrow !!! */
+.chat-input[type="text" i] {
+    padding: 1px 2em 1px 1em;
+}
+
+.submit {
+    border: none;
+    font-size: larger;
+    font-weight: 600;
+    background-color: transparent;
+    box-shadow: none;
+    cursor: pointer;
+    width: unset;
+    overflow: visible;
+    position: relative;
+    float: right;
+    margin: -2.1em -1.9em 0 0;
+}
+
+.submit:active, .submit:focus {
+    box-shadow: none;
+}
+
+.submit::-moz-focus-inner { 
+    /* Remove extra button spacing for Mozilla Firefox */
+    border: 0;
+    padding: 0;
+}

@@ -1,11 +1,13 @@
-## Hello
-To set up is very easy.
-Just run:
+### MESSAGER  
+#### Chat App with React and Node.js  
+
+**Scripts**  
+Installation:
 ```bash
 npm run setup
-```
-After the installation is complete, then run:
+```  
+  
+Run Development Build:  
 ```bash
 npm run dev
 ```
-Till We Cross Path, I remain, Fredrick Emmanuel (divofred)😁😁❤❤
